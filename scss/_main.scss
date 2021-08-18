@@ -1,0 +1,81 @@
+main {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/images/pattern-background-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-position-y: -75px;
+    transition: ease .3s;
+    @include breakpoint-down(medium) {
+        background-image: url('/images/pattern-background-mobile.svg');
+        background-position-y: 0;
+    }
+    .order-card {
+        width: 450px;
+        height: 600px;
+        background-color: $base;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        .card {
+            .upper-card {
+                background-image: url('/images/illustration-hero.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 220px;
+                border-radius: 15px 15px 0 0;
+            }
+            .lower-card {
+                height: 380px;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                p {
+                    color: $desatBlue;
+                    padding: 15px 45px;
+                }
+                .annual-plan {
+                    background-color: $veryPaleBlue;
+                    padding: 15px;
+                    align-self: center;
+                    width: 350px;
+                    margin-bottom: 15px;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    .annual-text {
+                        text-align: start;
+                        color: $desatBlue;
+                        flex: 3;
+                    }
+                    img {
+                        margin-right: 15px;
+                        flex: 0;
+                    }
+                    a {
+                        flex: 1;
+                    }
+                }
+                .card-btn {
+
+                }
+                .cancel-btn {
+
+                }
+            }
+        }
+        
+    h1, h2, h3, h4, h5 {
+        color: $darkBlue;
+    }
+    }
+    .attribution {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 15px;
+    }
+}

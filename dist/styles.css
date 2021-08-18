@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+  background-color: #e0e8ff;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position-y: -75px;
+  transition: ease .3s;
+}
+
+@media (max-width: 63.9375em) {
+  main {
+    background-image: url("/images/pattern-background-mobile.svg");
+    background-position-y: 0;
+  }
+}
+
+main .order-card {
+  width: 450px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+main .order-card .card .upper-card {
+  background-image: url("/images/illustration-hero.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 220px;
+  border-radius: 15px 15px 0 0;
+}
+
+main .order-card .card .lower-card {
+  height: 380px;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+main .order-card .card .lower-card p {
+  color: #7280a7;
+  padding: 15px 45px;
+}
+
+main .order-card .card .lower-card .annual-plan {
+  background-color: #f5f7ff;
+  padding: 15px;
+  align-self: center;
+  width: 350px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+main .order-card .card .lower-card .annual-plan .annual-text {
+  text-align: start;
+  color: #7280a7;
+  flex: 3;
+}
+
+main .order-card .card .lower-card .annual-plan img {
+  margin-right: 15px;
+  flex: 0;
+}
+
+main .order-card .card .lower-card .annual-plan a {
+  flex: 1;
+}
+
+main .order-card h1, main .order-card h2, main .order-card h3, main .order-card h4, main .order-card h5 {
+  color: #1f2f56;
+}
+
+main .attribution {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=styles.css.map */
