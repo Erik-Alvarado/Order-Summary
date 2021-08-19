@@ -1,81 +1,178 @@
 main {
-    height: 100vh;
-    width: 100%;
-    background-image: url('/images/pattern-background-desktop.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-position-y: -75px;
-    transition: ease .3s;
-    @include breakpoint-down(medium) {
-        background-image: url('/images/pattern-background-mobile.svg');
-        background-position-y: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position-y: -75px;
+  transition: ease 0.3s;
+  @include breakpoint-down(medium) {
+    background-image: url("/images/pattern-background-mobile.svg");
+    background-position-y: 0;
+  }
+  .order-card {
+    width: 400px;
+    height: 625px;
+    background-color: $base;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+    @include breakpoint-down(x-small) {
+      width: 325px;
+      height: 585px;
     }
-    .order-card {
-        width: 450px;
-        height: 600px;
-        background-color: $base;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        .card {
-            .upper-card {
-                background-image: url('/images/illustration-hero.svg');
-                background-repeat: no-repeat;
-                background-position: center;
-                height: 220px;
-                border-radius: 15px 15px 0 0;
-            }
-            .lower-card {
-                height: 380px;
-                padding-top: 40px;
-                display: flex;
-                flex-direction: column;
-                p {
-                    color: $desatBlue;
-                    padding: 15px 45px;
-                }
-                .annual-plan {
-                    background-color: $veryPaleBlue;
-                    padding: 15px;
-                    align-self: center;
-                    width: 350px;
-                    margin-bottom: 15px;
-                    border-radius: 8px;
-                    display: flex;
-                    align-items: center;
-                    .annual-text {
-                        text-align: start;
-                        color: $desatBlue;
-                        flex: 3;
-                    }
-                    img {
-                        margin-right: 15px;
-                        flex: 0;
-                    }
-                    a {
-                        flex: 1;
-                    }
-                }
-                .card-btn {
-
-                }
-                .cancel-btn {
-
-                }
-            }
+    @media (max-width: 320px) {
+      width: 275px;
+      height: 625px;
+    }
+    .card {
+      .upper-card {
+        background-image: url("/images/illustration-hero.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 220px;
+        border-radius: 15px 15px 0 0;
+        @include breakpoint-down(x-small) {
+          height: 175px;
+          background-size: 110%;
         }
-        
-    h1, h2, h3, h4, h5 {
-        color: $darkBlue;
+        @media (max-width: 320px) {
+          background-size: 130%;
+        }
+      }
+      .lower-card {
+        height: 380px;
+        padding-top: 35px;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 320px) {
+          padding-top: 20px;
+        }
+        h2 {
+          font-weight: 900;
+        }
+        p {
+          color: $desatBlue;
+          padding: 15px 45px;
+          margin-bottom: 5px;
+          @include breakpoint-down(x-small) {
+            padding: 15px 35px;
+            line-height: 25px;
+          }
+          @media (max-width: 320px) {
+            padding: 15px;
+          }
+        }
+        .annual-plan {
+          background-color: $veryPaleBlue;
+          padding: 20px;
+          align-self: center;
+          width: 350px;
+          margin-bottom: 25px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          @include breakpoint-down(x-small) {
+            width: 285px;
+          }
+          @media (max-width: 320px) {
+            width: 235px;
+            flex-direction: column;
+          }
+          .annual-text {
+            text-align: start;
+            color: $desatBlue;
+            flex: 3;
+            @media (max-width: 320px) {
+              text-align: center;
+              margin: 5px 0;
+            }
+
+            h4 {
+              font-weight: 900;
+            }
+          }
+          img {
+            margin-right: 15px;
+            flex: 0;
+            @media (max-width: 320px) {
+              margin-right: 0;
+            }
+          }
+          a {
+            color: $brightBlue;
+            font-weight: 700;
+            font-size: 14px;
+            flex: 1;
+            transition: ease 0.3s;
+            &:active,
+            &:hover {
+              color: $activePurp;
+              text-decoration: none;
+            }
+          }
+        }
+        .card-btn {
+          width: 350px;
+          padding: 12px;
+          border: 0px solid transparent;
+          border-radius: 8px;
+          background-color: $brightBlue;
+          color: $veryPaleBlue;
+          box-shadow: 0 15px 20px rgba(56, 41, 224, 0.2);
+          align-self: center;
+          font-size: 14px;
+          font-weight: 700;
+          transition: ease 0.3s;
+          &:hover,
+          &:active {
+            background-color: $activePurp;
+          }
+          @include breakpoint-down(x-small) {
+            width: 285px;
+            padding: 15px;
+          }
+          @media (max-width: 320px) {
+            width: 235px;
+          }
+        }
+        .cancel-btn {
+          margin-top: 25px;
+          font-size: 14px;
+          text-decoration: none;
+          font-weight: 900;
+          color: $desatBlue;
+          transition: ease 0.3s;
+          &:hover,
+          &:active {
+            color: $darkBlue;
+          }
+          @media (max-width: 320px) {
+            margin-top: 20px;
+          }
+        }
+      }
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: $darkBlue;
     }
-    .attribution {
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 15px;
+  }
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+    @media (max-width: 320px) {
+      margin-bottom: 7px;
+      text-align: center;
     }
+  }
 }

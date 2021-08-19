@@ -23,7 +23,7 @@ main {
   align-items: center;
   flex-direction: column;
   background-position-y: -75px;
-  transition: ease .3s;
+  transition: ease 0.3s;
 }
 
 @media (max-width: 63.9375em) {
@@ -34,12 +34,26 @@ main {
 }
 
 main .order-card {
-  width: 450px;
-  height: 600px;
+  width: 400px;
+  height: 625px;
   background-color: #fff;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 39.9375em) {
+  main .order-card {
+    width: 325px;
+    height: 585px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .order-card {
+    width: 275px;
+    height: 625px;
+  }
 }
 
 main .order-card .card .upper-card {
@@ -50,27 +64,77 @@ main .order-card .card .upper-card {
   border-radius: 15px 15px 0 0;
 }
 
+@media (max-width: 39.9375em) {
+  main .order-card .card .upper-card {
+    height: 175px;
+    background-size: 110%;
+  }
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .upper-card {
+    background-size: 130%;
+  }
+}
+
 main .order-card .card .lower-card {
   height: 380px;
-  padding-top: 40px;
+  padding-top: 35px;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .lower-card {
+    padding-top: 20px;
+  }
+}
+
+main .order-card .card .lower-card h2 {
+  font-weight: 900;
 }
 
 main .order-card .card .lower-card p {
   color: #7280a7;
   padding: 15px 45px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 39.9375em) {
+  main .order-card .card .lower-card p {
+    padding: 15px 35px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .lower-card p {
+    padding: 15px;
+  }
 }
 
 main .order-card .card .lower-card .annual-plan {
   background-color: #f5f7ff;
-  padding: 15px;
+  padding: 20px;
   align-self: center;
   width: 350px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   border-radius: 8px;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 39.9375em) {
+  main .order-card .card .lower-card .annual-plan {
+    width: 285px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .lower-card .annual-plan {
+    width: 235px;
+    flex-direction: column;
+  }
 }
 
 main .order-card .card .lower-card .annual-plan .annual-text {
@@ -79,16 +143,96 @@ main .order-card .card .lower-card .annual-plan .annual-text {
   flex: 3;
 }
 
+@media (max-width: 320px) {
+  main .order-card .card .lower-card .annual-plan .annual-text {
+    text-align: center;
+    margin: 5px 0;
+  }
+}
+
+main .order-card .card .lower-card .annual-plan .annual-text h4 {
+  font-weight: 900;
+}
+
 main .order-card .card .lower-card .annual-plan img {
   margin-right: 15px;
   flex: 0;
 }
 
-main .order-card .card .lower-card .annual-plan a {
-  flex: 1;
+@media (max-width: 320px) {
+  main .order-card .card .lower-card .annual-plan img {
+    margin-right: 0;
+  }
 }
 
-main .order-card h1, main .order-card h2, main .order-card h3, main .order-card h4, main .order-card h5 {
+main .order-card .card .lower-card .annual-plan a {
+  color: #3829e0;
+  font-weight: 700;
+  font-size: 14px;
+  flex: 1;
+  transition: ease 0.3s;
+}
+
+main .order-card .card .lower-card .annual-plan a:active, main .order-card .card .lower-card .annual-plan a:hover {
+  color: #766cf1;
+  text-decoration: none;
+}
+
+main .order-card .card .lower-card .card-btn {
+  width: 350px;
+  padding: 12px;
+  border: 0px solid transparent;
+  border-radius: 8px;
+  background-color: #3829e0;
+  color: #f5f7ff;
+  box-shadow: 0 15px 20px rgba(56, 41, 224, 0.2);
+  align-self: center;
+  font-size: 14px;
+  font-weight: 700;
+  transition: ease 0.3s;
+}
+
+main .order-card .card .lower-card .card-btn:hover, main .order-card .card .lower-card .card-btn:active {
+  background-color: #766cf1;
+}
+
+@media (max-width: 39.9375em) {
+  main .order-card .card .lower-card .card-btn {
+    width: 285px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .lower-card .card-btn {
+    width: 235px;
+  }
+}
+
+main .order-card .card .lower-card .cancel-btn {
+  margin-top: 25px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #7280a7;
+  transition: ease 0.3s;
+}
+
+main .order-card .card .lower-card .cancel-btn:hover, main .order-card .card .lower-card .cancel-btn:active {
+  color: #1f2f56;
+}
+
+@media (max-width: 320px) {
+  main .order-card .card .lower-card .cancel-btn {
+    margin-top: 20px;
+  }
+}
+
+main .order-card h1,
+main .order-card h2,
+main .order-card h3,
+main .order-card h4,
+main .order-card h5 {
   color: #1f2f56;
 }
 
@@ -96,5 +240,12 @@ main .attribution {
   position: absolute;
   bottom: 0;
   margin-bottom: 15px;
+}
+
+@media (max-width: 320px) {
+  main .attribution {
+    margin-bottom: 7px;
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
