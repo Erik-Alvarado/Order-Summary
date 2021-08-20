@@ -44,9 +44,19 @@ main .order-card.proceed .card {
   opacity: 0;
 }
 
+main .order-card.proceed .card-proceed {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
 main .order-card.cancel .card {
   transform: translateY(200%);
   opacity: 0;
+}
+
+main .order-card.cancel .card-cancel {
+  transform: translateY(0%);
+  opacity: 1;
 }
 
 @media (max-width: 39.9375em) {
@@ -196,23 +206,6 @@ main .order-card .card .lower-card .annual-plan a:active, main .order-card .card
   text-decoration: none;
 }
 
-main .order-card .card .lower-card .cancel {
-  transform: translateY(-100%);
-  transition: ease 0.3s;
-  opacity: 0;
-}
-
-main .order-card .card .lower-card .proceed {
-  transform: translateX(200%);
-  transition: ease 0.3s;
-  opacity: 0;
-}
-
-main .order-card .card .lower-card .return {
-  transform: translateX(0%);
-  opacity: 1;
-}
-
 main .order-card .card .lower-card .card-btn {
   width: 350px;
   padding: 12px;
@@ -281,8 +274,8 @@ main .order-card .card-cancel {
   transition: ease 0.3s;
   z-index: 0;
   position: absolute;
-  opacity: 1;
-  transform: translateY(200%);
+  opacity: 0;
+  transform: translateY(-200%);
 }
 
 main .order-card .card-cancel .lower-card {
@@ -319,6 +312,28 @@ main .order-card .card-cancel .lower-card p {
   }
 }
 
+main .order-card .card-cancel .lower-card .cancel-btn {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #7280a7;
+  transition: ease 0.3s;
+}
+
+main .order-card .card-cancel .lower-card .cancel-btn:hover, main .order-card .card-cancel .lower-card .cancel-btn:active {
+  color: #1f2f56;
+}
+
+main .order-card .card-cancel .lower-card .cancel-btn.cancel {
+  color: #1f2f56;
+}
+
+@media (max-width: 320px) {
+  main .order-card .card-cancel .lower-card .cancel-btn {
+    margin-top: 20px;
+  }
+}
+
 main .order-card .card-proceed {
   width: 400px;
   height: 300px;
@@ -329,7 +344,7 @@ main .order-card .card-proceed {
   transition: ease 0.3s;
   z-index: 0;
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   transform: translateX(-200%);
 }
 
@@ -367,6 +382,28 @@ main .order-card .card-proceed .lower-card p {
   }
 }
 
+main .order-card .card-proceed .lower-card #return {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 900;
+  color: #7280a7;
+  transition: ease 0.3s;
+}
+
+main .order-card .card-proceed .lower-card #return:hover, main .order-card .card-proceed .lower-card #return:active {
+  color: #1f2f56;
+}
+
+main .order-card .card-proceed .lower-card #return.cancel {
+  color: #1f2f56;
+}
+
+@media (max-width: 320px) {
+  main .order-card .card-proceed .lower-card #return {
+    margin-top: 20px;
+  }
+}
+
 main .order-card h1,
 main .order-card h2,
 main .order-card h3,
@@ -379,6 +416,10 @@ main .attribution {
   position: absolute;
   bottom: 0;
   margin-bottom: 15px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  text-align: center;
 }
 
 @media (max-width: 320px) {

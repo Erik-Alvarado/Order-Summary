@@ -1,16 +1,16 @@
-const proceedPay = document.querySelector('.card-btn');
+const proceedPay = document.querySelectorAll('.card-btn');
 const orderCard = document.querySelector('.order-card');
 const cancelPay = document.querySelectorAll('.cancel-btn');
-const cardProceed = document.querySelector('.card-proceed');
 
-proceedPay.addEventListener('click', ()=> {
-    orderCard.classList.toggle('proceed')
-});
-cancelPay.addEventListener('click', ()=> {
-    orderCard.classList.toggle('cancel')
-});
-
-
-// function cancelButton () {
-//     cancelPay.forEach(btn => btn.classList.toggle("cancel"))
-// }
+for(let i = 0; i < cancelPay.length; i++) {
+    const cancel = cancelPay[i];
+    cancel.onclick = function() {
+        orderCard.classList.toggle('cancel');
+    }
+}
+for(let i = 0; i < proceedPay.length; i++) {
+    const next = proceedPay[i];
+    next.onclick = function() {
+        orderCard.classList.toggle('proceed');
+    }
+}

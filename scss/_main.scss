@@ -24,11 +24,19 @@ main {
         transform: translateX(200%);
         opacity: 0;
       }
+      .card-proceed {
+        transform: translateX(0%);
+        opacity: 1;
+      }
     }
     &.cancel {
       .card {
         transform: translateY(200%);
         opacity: 0;
+      }
+      .card-cancel {
+        transform: translateY(0%);
+        opacity: 1;
       }
     }
 
@@ -135,20 +143,6 @@ main {
             }
           }
         }
-        .cancel {
-          transform: translateY(-100%);
-          transition: ease 0.3s;
-          opacity: 0;
-        }
-        .proceed {
-          transform: translateX(200%);
-          transition: ease 0.3s;
-          opacity: 0;
-        }
-        .return {
-          transform: translateX(0%);
-          opacity: 1;
-        }
         .card-btn {
           width: 350px;
           padding: 12px;
@@ -206,8 +200,8 @@ main {
       transition: ease 0.3s;
       z-index: 0;
       position: absolute;
-      opacity: 1;
-      transform: translateY(200%);
+      opacity: 0;
+      transform: translateY(-200%);
       .lower-card {
         padding-top: 25px;
         display: flex;
@@ -231,6 +225,23 @@ main {
             padding: 15px;
           }
         }
+        .cancel-btn {
+          font-size: 14px;
+          text-decoration: none;
+          font-weight: 900;
+          color: $desatBlue;
+          transition: ease 0.3s;
+          &:hover,
+          &:active {
+            color: $darkBlue;
+          }
+          &.cancel {
+            color: $darkBlue;
+          }
+          @media (max-width: 320px) {
+            margin-top: 20px;
+          }
+        }
       }
     }
     .card-proceed {
@@ -243,7 +254,7 @@ main {
       transition: ease 0.3s;
       z-index: 0;
       position: absolute;
-      opacity: 1;
+      opacity: 0;
       transform: translateX(-200%);
       .lower-card {
         padding-top: 25px;
@@ -268,6 +279,23 @@ main {
             padding: 15px;
           }
         }
+        #return {
+          font-size: 14px;
+          text-decoration: none;
+          font-weight: 900;
+          color: $desatBlue;
+          transition: ease 0.3s;
+          &:hover,
+          &:active {
+            color: $darkBlue;
+          }
+          &.cancel {
+            color: $darkBlue;
+          }
+          @media (max-width: 320px) {
+            margin-top: 20px;
+          }
+        }
       }
     }
     h1,
@@ -283,6 +311,10 @@ main {
     position: absolute;
     bottom: 0;
     margin-bottom: 15px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    text-align: center;
     @media (max-width: 320px) {
       margin-bottom: 7px;
       text-align: center;
